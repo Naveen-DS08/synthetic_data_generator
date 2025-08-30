@@ -1,5 +1,4 @@
 import os
-import json 
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate 
 from src.synthetic_data_generator.utils.common import * 

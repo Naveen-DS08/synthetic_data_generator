@@ -1,13 +1,13 @@
 import logging 
 import os 
 from datetime import datetime 
-from src.synthetic_data_generator.utils.common import create_directories
+
 
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 log_path = os.path.join(os.getcwd(), "logs", LOG_FILE)
 
 # create directories
-create_directories([log_path], verbose=False)
+os.makedirs(log_path, exist_ok=True)
 
 LOG_FILE_PATH = os.path.join(log_path, LOG_FILE)
 
