@@ -3,7 +3,7 @@ import yaml
 import pandas as pd 
 import json
 from pathlib import Path
-from src.synthetic_data_generator.logging import logger
+from src.synthetic_data_generator.logging.logger import logger
 
 def read_yaml(file_path:Path):
     "Load and return content of a YAML file."
