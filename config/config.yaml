@@ -1,0 +1,5 @@
+artifacts_root: artifacts 
+
+# paths:
+log_path: "logs/app.log"
+output_path : "outputs/"

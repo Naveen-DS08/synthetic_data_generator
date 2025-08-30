@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s]:%(message)s:")
 
-PROJECT_NAME = "sythentic_data_generator"
+PROJECT_NAME = "synthetic_data_generator"
 
 list_of_files = [
     f"src/{PROJECT_NAME}/__init__.py",
@@ -19,6 +19,7 @@ list_of_files = [
     f"src/{PROJECT_NAME}/constants/__init__.py",
     "config/config.yaml",
     "params.yaml",
+    "prompt_template.yaml"
     "main.py",
     "Dockerfile",
     "setup.py",

@@ -1,0 +1,14 @@
+[project]
+name = "synthetic-data-generator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=6.30.1",
+    "langchain-community>=0.3.29",
+    "langchain-core>=0.3.75",
+    "langchain-groq>=0.3.7",
+    "pandas>=2.3.2",
+    "python-dotenv>=1.1.1",
+]
