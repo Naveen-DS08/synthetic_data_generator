@@ -14,8 +14,8 @@ st.set_page_config(
     layout = "wide"
 )
 
-st.title("Synthetic Dat Generator using LLM")
-st.markdown("## Enter your shema and number of rows")
+st.title("🤖Synthetic Data Generator using LLM")
+st.markdown("## Enter your shema and number of rows📃")
 
 col1, col2 = st.columns([2,1])
 
