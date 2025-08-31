@@ -5,8 +5,8 @@ class PathConfig(BaseModel):
     log_path: Path 
     output_path: Path 
 
-class DataGeneratorCongig(BaseModel):
+class DataGeneratorConfig(BaseModel):
     model_name: str 
-    temperature: int 
+    temperature: float 
     json_mode: bool 
     prompt_template: str 

@@ -1,5 +1,5 @@
 llm:
-  model_name: ""
-  temperature: ""
+  model_name: "llama-3.1-8b-instant"
+  temperature: 0.2
   json_mode: True 
   

@@ -1,6 +1,6 @@
 from src.synthetic_data_generator.constants import *  
 from src.synthetic_data_generator.utils.common import read_yaml, create_directories
-from src.synthetic_data_generator.entity.config_entity import PathConfig, DataGeneratorCongig
+from src.synthetic_data_generator.entity.config_entity import PathConfig, DataGeneratorConfig
 from src.synthetic_data_generator.logging.logger import logger
 
 class ConfigurationManager():
@@ -29,14 +29,14 @@ class ConfigurationManager():
         )
         return path_config
     
-    def get_data_generation_config(self) -> DataGeneratorCongig:
+    def get_data_generation_config(self) -> DataGeneratorConfig:
         llm_params = self.params.get("llm", {})
         prompt_template = self.prompt_template.get("llm_prompt_template", "")
 
-        data_gen_config = DataGeneratorCongig(
+        data_gen_config = DataGeneratorConfig(
             model_name= llm_params.get("model_name"),
             temperature = llm_params.get("temperature"),
-            json_mode = llm_params.get("json_model"),
+            json_mode = llm_params.get("json_mode"),
             prompt_template = prompt_template
         )
 

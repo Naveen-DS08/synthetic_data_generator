@@ -3,15 +3,15 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate 
 from src.synthetic_data_generator.utils.common import * 
 from src.synthetic_data_generator.logging import logger 
-from src.synthetic_data_generator.entity.config_entity import DataGeneratorCongig 
+from src.synthetic_data_generator.entity.config_entity import DataGeneratorConfig 
 
 from dotenv import load_dotenv
 load_dotenv()
-os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
+# os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 class DataGenerator:
     "Handles entire data generation process"
-    def __init__(self, config: DataGeneratorCongig):
+    def __init__(self, config: DataGeneratorConfig):
         self.config = config 
         self.groq_api_key = os.getenv("GROQ_API_KEY")
         if not self.groq_api_key:

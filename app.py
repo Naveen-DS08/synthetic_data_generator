@@ -46,10 +46,10 @@ if generate_button and schema_input:
             data_gen_config = config_manager.get_data_generation_config()
 
             # Initilize data generator with loaded config 
-            generator = DataGenerator(data_gen_config)
+            generator = DataGenerator(config=data_gen_config)
 
             # generate JSON data from llm 
-            json_data = generator.generate_data(schems = schema_input, num_rows= num_rows)
+            json_data = generator.generate_data(schema = schema_input, num_rows= num_rows)
             logger.info("JSON object created successfully.")
 
             # Convert JSON to CSV 
