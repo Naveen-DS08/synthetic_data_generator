@@ -24,7 +24,12 @@ with col1:
         "Column Description (YAML or JSON format)",
         placeholder= "age: Age of an individual in years (integer)\ngender: Gender of individual ('M' or 'F')",
         height= 300
-     )
+        )
+    constraints_input = st.text_area(
+            "Logical Constraints",
+            placeholder="e.g., If age > 28, employment_status cannot be 'student'.",
+            height=150
+        )
 with col2:
     num_rows = st.number_input(
         "Number of rows to generate",
@@ -49,7 +54,9 @@ if generate_button and schema_input:
             generator = DataGenerator(config=data_gen_config)
 
             # generate JSON data from llm 
-            json_data = generator.generate_data(schema = schema_input, num_rows= num_rows)
+            json_data = generator.generate_data(schema = schema_input, 
+                                                num_rows= num_rows, 
+                                                constraints= constraints_input)
             logger.info("JSON object created successfully.")
 
             # Convert JSON to CSV 

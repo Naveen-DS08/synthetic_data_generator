@@ -9,6 +9,10 @@ llm_prompt_template: |
     Schema:
     {schema}
     ---
+
+    Logical Constraints:
+    {constraints}
+    ---
     
     The output must be a single JSON list of objects, without any additional text or explanation.
     Example output format:

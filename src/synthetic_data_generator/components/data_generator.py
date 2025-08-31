@@ -24,17 +24,20 @@ class DataGenerator:
             temperature = self.config.temperature,
             groq_api_key = self.groq_api_key
         )
-    def generate_data(self, schema:str, num_rows:int) -> str:
+    def generate_data(self, 
+                      schema:str, 
+                      num_rows:int,
+                      constraints: str = "" ) -> str:
         "Generates synthetic data bu prompting the llm"
         logger.info(f"Generating data with model: {self.config.model_name}")
 
         try:
             prompt_template = PromptTemplate(
                 template= self.config.prompt_template,
-                input_variables=["schema", "num_rows"]
+                input_variables=["schema", "num_rows", "constraints"]
             )
 
-            prompt = prompt_template.format(schema=schema, num_rows=num_rows)
+            prompt = prompt_template.format(schema=schema, num_rows=num_rows, constraints= constraints)
 
             if self.config.json_mode:
                 response = self.llm.invoke(prompt, response_format={"type": "json_object"})
