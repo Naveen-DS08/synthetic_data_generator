@@ -31,7 +31,7 @@ graph TD
     D --> E{JSON is parsed and validated};
     E -- JSON is valid --> F[JSON is converted to CSV];
     E -- JSON is invalid --> G[Log and display an error to user];
-    F --> H[Display "CSV generated successfully" message];
+    F --> H[Display 'CSV generated successfully' message];
     F --> I[Provide CSV download button];
     H & I --> J[End];
     G --> J;
